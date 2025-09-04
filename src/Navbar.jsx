@@ -7,9 +7,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  // helper function to open new window for routes
+  // ✅ fixed helper function to open routes in new window
   const openNewWindow = (path) => {
-    window.open(path, "_blank", "noopener,noreferrer");
+    const base = window.location.origin; // e.g. http://localhost:5173
+    window.open(`${base}${path}`, "_blank", "noopener,noreferrer");
   };
 
   return (
