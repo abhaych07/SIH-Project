@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Profile.css";
+import "./profile.css";
 
 export default function Profile({ progress = 65 }) {
   const radius = 26;
