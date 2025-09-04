@@ -13,11 +13,14 @@ import ProfilePage from "./ProfilePage.jsx";
 
 // Import Components
 import SignupForm from "./SignupForm.jsx";
+import { SignIn, SignUp } from "@clerk/clerk-react";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/sign-in/*" element={<SignIn />} />
+        <Route path="/sign-up/*" element={<SignUp />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/chatbot" element={<ChatbotPage />} />
         <Route path="/counselling" element={<CounsellingPage />} />
