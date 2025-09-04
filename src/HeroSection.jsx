@@ -1,6 +1,6 @@
 import React from "react";
 import './HeroSection.css';
-import WordByWordText from "./WordByWord";
+import WordByWordText from "./Wordbyword.jsx";
 
 function HeroSection() {
   return (
