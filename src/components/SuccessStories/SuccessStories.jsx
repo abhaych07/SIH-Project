@@ -1,6 +1,6 @@
 import React from "react";
 import './SuccessStories.css';
-import Card from "./Card";
+import Card from "../Card/Card";
 
 function SuccessStories() {
   return (
