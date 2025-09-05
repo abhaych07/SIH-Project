@@ -1,6 +1,6 @@
 import React from "react";
 import './MoodSection.css';
-import MoodSelector from "./Mood";
+import MoodSelector from "./Mood.jsx";
 
 function MoodSection() {
   return (
