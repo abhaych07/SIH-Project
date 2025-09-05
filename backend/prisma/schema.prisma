@@ -15,13 +15,71 @@ datasource db {
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
-  clerkId   String  @unique
-  email     String  @unique
-  firstName String?
-  lastName  String?
-  imageUrl  String?
-  role      Role  
+  id                Int          @id @default(autoincrement())
+  clerkId           String       @unique
+  email             String       @unique
+  firstName         String?
+  lastName          String?
+  imageUrl          String?
+  role              Role         @default(STUDENT)
+
+  bio               String?
+  expertise         String[]
+  experience        String?
+  averageRating     Float? 
+  allRatings        Int[]
+  languages         String[]
+
+  testResults       TestResult[]
+  ticketsAsCounsellor Ticket[]   @relation("CounsellorTickets")
+  ticketsAsStudent    Ticket[]   @relation("StudentTickets")
+
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+}
+
+model TestResult {
+  id             Int             @id @default(autoincrement())
+  user           User            @relation(fields: [userId], references: [id])
+  userId         Int
+  responses      Json?
+  phq9Score      Int?
+  gad7Score      Int?
+  ghq12Score     Int?
+
+  interpretation MentalState @default(HEALTHY)
+
+  createdAt      DateTime       @default(now())
+}
+
+model Ticket {
+  id           Int    @id @default(autoincrement())
+  issue        String
+  status       TicketStatus @default(OPEN)
+
+  // Relations
+  student      User   @relation("StudentTickets", fields: [studentId], references: [id])
+  studentId    Int
+
+  counsellor   User   @relation("CounsellorTickets", fields: [counsellorId], references: [id])
+  counsellorId Int
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+enum MentalState {
+  HEALTHY         // no significant issues
+  SLIGHTLY_RISKY  // mild symptoms
+  MODERATE        // moderate mental health issues
+  BAD_SHAPE       // severe condition
+  SERIOUS         // urgent, crisis-level
 }
 
 enum Role {

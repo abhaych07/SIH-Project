@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { clerkMiddleware } from "@clerk/express";
 import router from "./routes/loginroute.js";
-
+import updateUserRoute from "./routes/updateUser.js";
 dotenv.config();
 
 const app = express();
@@ -20,6 +20,8 @@ app.get("/", (req, res) => {
 
 // Auth routes
 app.use("/api", router);
+app.use("/api.updateuser",updateUserRoute)
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
