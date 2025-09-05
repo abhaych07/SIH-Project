@@ -38,8 +38,15 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/program" element={<Program />} />
         <Route path="/signup" element={<SignupForm />} />
+
         <Route path="/wordbyword" element={<Wordbyword />} />
         <Route path="/success-stories" element={<SuccessStories />} />
+
+        <Route path="/ai" element={<Ai/>} />
+        <Route path="/booking" element={<Booking/>} />
+        <Route path="/resource" element={<Resource/>} />
+        <Route path="/admin" element={<Admin/>} />
+
       </Routes>
 
       
