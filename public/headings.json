@@ -1,0 +1,32 @@
+{
+  "header": "AI Counselling Support",
+  "botIntro": "Hi 👋 I’m your AI Support. How are you feeling today?",
+  "botReply": "I hear you. Try a short breathing exercise or would you like to book a counsellor?",
+  "sidebar": {
+    "title": "Quick Tools",
+    "tools": [
+      {
+        "title": "Breathing Exercise",
+        "description": "Try box breathing for 2 minutes.",
+        "button": "Start",
+        "color": "blue"
+      },
+      {
+        "title": "Relaxation Audio",
+        "description": "Play 5-min guided meditation.",
+        "button": "Play",
+        "color": "green"
+      },
+      {
+        "title": "Need to Talk?",
+        "description": "Book a confidential appointment.",
+        "button": "Book Now",
+        "color": "purple"
+      }
+    ],
+    "emergency": {
+      "button": "🚨 Emergency Help",
+      "helpline": "Call KIRAN Helpline: 1800-599-0019"
+    }
+  }
+}
