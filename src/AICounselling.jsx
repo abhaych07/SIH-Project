@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import headings from "@/data/headings.json";
+
 
 export default function AICounselling() {
   const [messages, setMessages] = useState([
@@ -32,7 +34,7 @@ export default function AICounselling() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col">
       {/* Header */}
       <header className="bg-blue-600 text-white p-4 text-center font-semibold text-lg shadow-md">
-        AI Counselling Support
+        {headings.AICounsellingPage.mainHeading}
       </header>
 
       <div className="flex flex-1 max-w-7xl mx-auto w-full">
