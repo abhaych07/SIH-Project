@@ -1,34 +1,96 @@
 {
   "AICounsellingPage": {
-    "mainHeading": "🤖 AI Counselling Assistant",
-    "subHeading": "Chat with our AI-powered assistant for instant mental health guidance.",
-    "sections": {
-      "chatBox": "AI Chat Support",
-      "disclaimer": "This AI assistant is for guidance only. For serious concerns, please connect with a counsellor."
+  "header": "AI Counselling Support",
+  "botIntro": "Hi 👋 I’m your AI Support. How are you feeling today?",
+  "botReply": "I hear you. Try a short breathing exercise or would you like to book a counsellor?",
+  "sidebar": {
+    "title": "Quick Tools",
+    "tools": [
+      {
+        "title": "Breathing Exercise",
+        "description": "Try box breathing for 2 minutes.",
+        "button": "Start",
+        "color": "blue"
+      },
+      {
+        "title": "Relaxation Audio",
+        "description": "Play 5-min guided meditation.",
+        "button": "Play",
+        "color": "green"
+      },
+      {
+        "title": "Need to Talk?",
+        "description": "Book a confidential appointment.",
+        "button": "Book Now",
+        "color": "purple"
+      }
+    ],
+    "emergency": {
+      "button": "🚨 Emergency Help",
+      "helpline": "Call KIRAN Helpline: 1800-599-0019"
+    }
+  }
+}
+  },
+  "BookingPage":{
+  "title": "🧑‍⚕️ Book a Counselling Session",
+  "subtitle": "All bookings are confidential. Choose your preferred date & time to connect with a counsellor.",
+  "fields": {
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "label": "Email / College ID",
+      "placeholder": "you@example.com"
+    },
+    "date": {
+      "label": "Select Date"
+    },
+    "time": {
+      "label": "Preferred Time"
+    },
+    "notes": {
+      "label": "Additional Notes (Optional)",
+      "placeholder": "Any specific concerns you'd like to mention..."
     }
   },
-  "BookingPage": {
-    "mainHeading": "🧑‍⚕️ Book a Counselling Session",
-    "subHeading": "All bookings are confidential. Choose your preferred date & time to connect with a counsellor.",
-    "formFields": [
-      "Full Name",
-      "Email / College ID",
-      "Select Date",
-      "Preferred Time",
-      "Additional Notes (Optional)"
-    ],
-    "submitButton": "📅 Confirm Booking"
-  },
+  "button": "📅 Confirm Booking"
+},
   "ResourcesPage": {
-    "mainHeading": "🌱 Wellness Resources",
-    "subHeading": "Explore curated resources to support your mental well-being.",
-    "cardHeadings": [
-      "Guided Meditation",
-      "Coping with Academic Stress",
-      "Sleep Hygiene Tips",
-      "Relaxation Audio Pack"
-    ]
-  },
+  "title": "🌱 Wellness Resources",
+  "subtitle": "Explore curated resources to support your mental well-being.",
+  "items": [
+    {
+      "title": "Guided Meditation",
+      "description": "10-minute audio for stress relief and mindfulness.",
+      "icon": "Headphones",
+      "type": "Audio",
+      "link": "#"
+    },
+    {
+      "title": "Coping with Academic Stress",
+      "description": "A quick guide with proven techniques for handling pressure.",
+      "icon": "BookOpen",
+      "type": "Article",
+      "link": "#"
+    },
+    {
+      "title": "Sleep Hygiene Tips",
+      "description": "Video series on building better sleep habits.",
+      "icon": "Video",
+      "type": "Video",
+      "link": "#"
+    },
+    {
+      "title": "Relaxation Audio Pack",
+      "description": "Collection of sounds for focus, relaxation, and calmness.",
+      "icon": "PlayCircle",
+      "type": "Audio",
+      "link": "#"
+    }
+  ]
+},
   "AdminDashboard": {
     "mainHeading": "📊 Admin Dashboard",
     "sections": {
