@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Calendar } from "@/components/ui/calendar"
 import { Textarea } from "@/components/ui/textarea"
+import bookingData from "../../public/data/booking.json" // adjust path if needed
 
 export default function BookingPage() {
   const [date, setDate] = useState(new Date())
@@ -21,28 +22,29 @@ export default function BookingPage() {
         <Card className="shadow-xl rounded-2xl">
           <CardContent className="p-8 space-y-6">
             <h2 className="text-2xl font-bold text-center text-gray-800">
-              🧑‍⚕️ Book a Counselling Session
+              {bookingData.title}
             </h2>
-            <p className="text-center text-gray-500">
-              All bookings are <span className="font-semibold">confidential</span>.  
-              Choose your preferred date & time to connect with a counsellor.
-            </p>
+            <p className="text-center text-gray-500">{bookingData.subtitle}</p>
 
             {/* Name */}
             <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="Enter your name" />
+              <Label htmlFor="name">{bookingData.fields.name.label}</Label>
+              <Input id="name" placeholder={bookingData.fields.name.placeholder} />
             </div>
 
             {/* Email */}
             <div className="space-y-2">
-              <Label htmlFor="email">Email / College ID</Label>
-              <Input id="email" type="email" placeholder="you@example.com" />
+              <Label htmlFor="email">{bookingData.fields.email.label}</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder={bookingData.fields.email.placeholder}
+              />
             </div>
 
             {/* Date Picker */}
             <div className="space-y-2">
-              <Label>Select Date</Label>
+              <Label>{bookingData.fields.date.label}</Label>
               <Calendar
                 mode="single"
                 selected={date}
@@ -53,20 +55,23 @@ export default function BookingPage() {
 
             {/* Time */}
             <div className="space-y-2">
-              <Label htmlFor="time">Preferred Time</Label>
+              <Label htmlFor="time">{bookingData.fields.time.label}</Label>
               <Input id="time" type="time" />
             </div>
 
             {/* Notes */}
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Notes (Optional)</Label>
-              <Textarea id="notes" placeholder="Any specific concerns you'd like to mention..." />
+              <Label htmlFor="notes">{bookingData.fields.notes.label}</Label>
+              <Textarea
+                id="notes"
+                placeholder={bookingData.fields.notes.placeholder}
+              />
             </div>
 
             {/* Submit */}
             <motion.div whileHover={{ scale: 1.02 }}>
               <Button className="w-full text-lg py-6">
-                📅 Confirm Booking
+                {bookingData.button}
               </Button>
             </motion.div>
           </CardContent>
