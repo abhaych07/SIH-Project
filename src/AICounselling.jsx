@@ -1,14 +1,12 @@
-// src/pages/AICounselling.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import headings from "@/data/headings.json";
-
+import data from "../../public/heading.json"; // adjust path if needed
 
 export default function AICounselling() {
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi 👋 I’m your AI Support. How are you feeling today?" },
+    { from: "bot", text: data.botIntro },
   ]);
   const [input, setInput] = useState("");
 
@@ -18,14 +16,11 @@ export default function AICounselling() {
     setMessages(newMessages);
     setInput("");
 
-    // Simulated bot reply (replace with backend / AI API)
+    // Simulated bot reply
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        {
-          from: "bot",
-          text: "I hear you. Try a short breathing exercise or would you like to book a counsellor?",
-        },
+        { from: "bot", text: data.botReply },
       ]);
     }, 800);
   };
@@ -34,7 +29,7 @@ export default function AICounselling() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white flex flex-col">
       {/* Header */}
       <header className="bg-blue-600 text-white p-4 text-center font-semibold text-lg shadow-md">
-        {headings.AICounsellingPage.mainHeading}
+        {data.AICounsellingPage.header}
       </header>
 
       <div className="flex flex-1 max-w-7xl mx-auto w-full">
@@ -75,55 +70,30 @@ export default function AICounselling() {
         {/* Side Tools */}
         <aside className="w-80 p-6 space-y-6 bg-blue-50 hidden md:block">
           <h2 className="text-xl font-bold text-blue-700 mb-4">
-            Quick Tools
+            {data.AICounsellingPage.sidebar.title}
           </h2>
 
-          {/* Breathing Exercise */}
-          <Card className="shadow-md border-0">
-            <CardContent className="p-4 text-center">
-              <h3 className="font-semibold mb-2">Breathing Exercise</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Try box breathing for 2 minutes.
-              </p>
-              <Button className="w-full bg-blue-600 text-white">
-                Start
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Relaxation Audio */}
-          <Card className="shadow-md border-0">
-            <CardContent className="p-4 text-center">
-              <h3 className="font-semibold mb-2">Relaxation Audio</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Play 5-min guided meditation.
-              </p>
-              <Button className="w-full bg-green-600 text-white">
-                Play
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Book Counsellor */}
-          <Card className="shadow-md border-0">
-            <CardContent className="p-4 text-center">
-              <h3 className="font-semibold mb-2">Need to Talk?</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Book a confidential appointment.
-              </p>
-              <Button className="w-full bg-purple-600 text-white">
-                Book Now
-              </Button>
-            </CardContent>
-          </Card>
+          {data.sidebar.tools.map((tool, i) => (
+            <Card key={i} className="shadow-md border-0">
+              <CardContent className="p-4 text-center">
+                <h3 className="font-semibold mb-2">{tool.title}</h3>
+                <p className="text-sm text-gray-600 mb-3">{tool.description}</p>
+                <Button
+                  className={`w-full bg-${tool.color}-600 text-white`}
+                >
+                  {tool.button}
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
 
           {/* Emergency */}
           <div className="text-center">
             <Button className="w-full bg-red-600 text-white font-bold">
-              🚨 Emergency Help
+              {data.AICounsellingPage.sidebar.emergency.button}
             </Button>
             <p className="text-xs text-gray-500 mt-2">
-              Call KIRAN Helpline: 1800-599-0019
+              {data.AICounsellingPage.sidebar.emergency.helpline}
             </p>
           </div>
         </aside>
