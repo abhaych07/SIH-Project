@@ -46,20 +46,27 @@
         "id": "mode",
         "label": "Preferred Mode",
         "type": "select",
-        "options": ["Online", "Offline"],
+        "options": [
+          { "value": "online", "label": "Online" },
+          { "value": "offline", "label": "Offline" }
+        ],
         "required": true
       },
       {
         "id": "timing",
         "label": "Preferred Timing",
-        "type": "datetime",
+        "type": "datetime-local",
         "required": true
       },
       {
         "id": "severity",
         "label": "Severity of Case",
         "type": "select",
-        "options": ["Low", "Moderate", "High"],
+        "options": [
+          { "value": "low", "label": "Low" },
+          { "value": "moderate", "label": "Moderate" },
+          { "value": "high", "label": "High" }
+        ],
         "required": true
       },
       {
@@ -67,12 +74,12 @@
         "label": "Types of Concerns",
         "type": "checkbox-group",
         "options": [
-          "Academic Stress",
-          "Anxiety / Depression",
-          "Career Guidance",
-          "Relationship / Peer Issues",
-          "Family Concerns",
-          "Other"
+          { "value": "academic_stress", "label": "Academic Stress" },
+          { "value": "anxiety_depression", "label": "Anxiety / Depression" },
+          { "value": "career_guidance", "label": "Career Guidance" },
+          { "value": "relationship_peer", "label": "Relationship / Peer Issues" },
+          { "value": "family_concerns", "label": "Family Concerns" },
+          { "value": "other", "label": "Other" }
         ],
         "allowCustom": true,
         "required": true
@@ -86,9 +93,13 @@
       },
       {
         "id": "counselorPreference",
-        "label": "Counselor Preference",
+        "label": "Counselor Preference (Optional)",
         "type": "radio",
-        "options": ["Male", "Female", "No Preference"],
+        "options": [
+          { "value": "male", "label": "Male" },
+          { "value": "female", "label": "Female" },
+          { "value": "any", "label": "No Preference" }
+        ],
         "required": false
       }
     ],
@@ -96,7 +107,6 @@
       "label": "Submit Booking"
     }
   },
-
   "ResourcesPage": {
   "title": "🌱 Wellness Resources",
   "subtitle": "Explore curated resources to support your mental well-being.",
