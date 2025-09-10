@@ -32,31 +32,71 @@
   }
 }
   },
-  "BookingPage":{
-  "title": "🧑‍⚕️ Book a Counselling Session",
-  "subtitle": "All bookings are confidential. Choose your preferred date & time to connect with a counsellor.",
-  "fields": {
-    "name": {
-      "label": "Full Name",
-      "placeholder": "Enter your name"
-    },
-    "email": {
-      "label": "Email / College ID",
-      "placeholder": "you@example.com"
-    },
-    "date": {
-      "label": "Select Date"
-    },
-    "time": {
-      "label": "Preferred Time"
-    },
-    "notes": {
-      "label": "Additional Notes (Optional)",
-      "placeholder": "Any specific concerns you'd like to mention..."
+  "bookingForm": {
+    "title": "Book a Counseling Session",
+    "fields": [
+      {
+        "id": "location",
+        "label": "Preferred Location / Address",
+        "type": "text",
+        "placeholder": "Enter your address or location",
+        "required": true
+      },
+      {
+        "id": "mode",
+        "label": "Preferred Mode",
+        "type": "select",
+        "options": ["Online", "Offline"],
+        "required": true
+      },
+      {
+        "id": "timing",
+        "label": "Preferred Timing",
+        "type": "datetime",
+        "required": true
+      },
+      {
+        "id": "severity",
+        "label": "Severity of Case",
+        "type": "select",
+        "options": ["Low", "Moderate", "High"],
+        "required": true
+      },
+      {
+        "id": "concerns",
+        "label": "Types of Concerns",
+        "type": "checkbox-group",
+        "options": [
+          "Academic Stress",
+          "Anxiety / Depression",
+          "Career Guidance",
+          "Relationship / Peer Issues",
+          "Family Concerns",
+          "Other"
+        ],
+        "allowCustom": true,
+        "required": true
+      },
+      {
+        "id": "description",
+        "label": "Brief Description",
+        "type": "textarea",
+        "placeholder": "Write a short description...",
+        "required": true
+      },
+      {
+        "id": "counselorPreference",
+        "label": "Counselor Preference",
+        "type": "radio",
+        "options": ["Male", "Female", "No Preference"],
+        "required": false
+      }
+    ],
+    "submitButton": {
+      "label": "Submit Booking"
     }
   },
-  "button": "📅 Confirm Booking"
-},
+
   "ResourcesPage": {
   "title": "🌱 Wellness Resources",
   "subtitle": "Explore curated resources to support your mental well-being.",
