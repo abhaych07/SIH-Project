@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import data from "../../public/heading.json"; // adjust path if needed
+import data from "../../public/heading.json"; 
 
 export default function AICounselling() {
   const [messages, setMessages] = useState([
