@@ -150,8 +150,14 @@
         "Resources Uploaded",
         "Reports Generated"
       ],
-      "chart": "User Distribution",
-      "activity": "Recent Activity"
+   "chart": "User Distribution",
+      "activity": "Recent Activity",
+      "recentActivity": [
+        "✅ New counsellor registered",
+        "📥 3 new resources uploaded",
+        "📌 12 new bookings confirmed",
+        "⚡ Admin generated a report"
+      ]
     }
   }
 }
