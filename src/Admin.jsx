@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Users, CalendarCheck, FileText, BarChart3 } from "lucide-react"
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts"
-
+import dashboardData from "../../public/heading.json"; 
 
 export default function AdminDashboard() {
   // Map stats from JSON with icons + dummy values
@@ -104,10 +104,9 @@ export default function AdminDashboard() {
               {dashboardData.AdminDashboard.sections.activity}
             </h2>
             <ul className="space-y-3 text-gray-600">
-              <li>✅ New counsellor registered</li>
-              <li>📥 3 new resources uploaded</li>
-              <li>📌 12 new bookings confirmed</li>
-              <li>⚡ Admin generated a report</li>
+              {dashboardData.AdminDashboard.sections.recentActivity.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
             <Button className="mt-4 w-full">View All</Button>
           </CardContent>
