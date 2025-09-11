@@ -141,6 +141,62 @@
     }
   ]
 },
+"form": {
+"placeholder": "Write a detailed description of the issue or problem you're facing...",
+"helperText": "Explain the issue in detail so the counsellor can prepare."
+},
+"status": {
+"label": "Status",
+"options": ["OPEN", "CLOSED", "PENDING"],
+"helperText": "Defines the current state of the ticket."
+},
+"level": {
+"label": "Level",
+"options": ["GENERAL", "URGENT", "CRITICAL"],
+"helperText": "Indicates the priority level of the ticket."
+},
+"meetingLocation": {
+"label": "Meeting Location",
+"optional": "(optional)",
+"placeholder": "e.g., \"Room 202\" or \"https://meet.google.com/abc-defg\"",
+"helperText": "Optional — specify physical room or an online link."
+},
+"timing": {
+"label": "Timing",
+"required": "*",
+"helperText": "Pick a date and time for the session."
+},
+"concerns": {
+"legend": "Concerns",
+"required": "*",
+"helperText": "Select one or more concerns.",
+"options": ["ANXIETY", "DEPRESSION", "STRESS", "ACADEMIC", "RELATIONSHIP"]
+},
+"severity": {
+"label": "Severity",
+"required": "*",
+"options": ["LOW", "MEDIUM", "HIGH"],
+"helperText": "Defines the intensity/seriousness of the issue.",
+"defaultOption": "-- choose severity --"
+},
+"counsellorType": {
+"label": "Counsellor Type",
+"optional": "(optional)",
+"options": ["PSYCHOLOGIST", "THERAPIST", "MENTOR"],
+"defaultOption": "-- no preference --",
+"helperText": "Optional — choose the preferred counsellor type."
+},
+"buttons": {
+"submit": "Submit Ticket",
+"reset": "Reset"
+},
+"submission": {
+"initialMessage": "Fill required fields and click Submit Ticket.",
+"successTitle": "Ticket prepared (demo)",
+"successDescription": "Below is the JSON payload you'd send to a server:",
+"errorMessage": "There was an error submitting your ticket."
+}
+},
   "AdminDashboard": {
     "mainHeading": "📊 Admin Dashboard",
     "sections": {
