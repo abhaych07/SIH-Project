@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import textData from "./formText.json"; // assuming JSON file is saved as formText.json in same folder
+import textData from "../../public/heading.json";  
 
 export default function CounsellingForm() {
   const [description, setDescription] = useState("");
