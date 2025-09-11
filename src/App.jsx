@@ -4,6 +4,12 @@ import './App.css'
 
 // Layout components
 import Navbar from "./components/Navbar/Navbar";
+  
+import Booking from "./Booking.jsx"
+import Ai from "./AICounselling.jsx"
+import Resource from "./Resources.jsx"
+import Admin from "./Admin.jsx"
+
 
 
 // Pages
